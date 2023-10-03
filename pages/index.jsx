@@ -10,8 +10,8 @@ const Index = ({ data }) => {
   
   return (
     <>
-      {/* <ConcertList list={data.dbs.db != null ? data.dbs.db : []}/>
-      <Footer /> */}
+      <ConcertList list={data.dbs.db != null ? data.dbs.db : []}/>
+      <Footer />
     </>
   );
 };
@@ -19,15 +19,11 @@ const Index = ({ data }) => {
 export default Index
 
 export async function getServerSideProps() {
-  const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
-  const API_KEY2 = process.env.NEXT_PUBLIC_API_KEY2;
   
-  let from = moment().endOf('week').add(1,'d');
-  let to = moment().endOf('week').add(1,'d').endOf('week');
+  let from = moment().endOf('week').add(1,'d').format("YYYYMMDD");
+  let to = moment().endOf('week').add(1,'d').endOf('week').format("YYYYMMDD");
 
-
-  const res = await axios.get(`http://www.culture.go.kr/openapi/rest/publicperformancedisplays/period?from=${from}8&to=${to}&cPage=1&rows=10&place=&gpsxfrom=&gpsyfrom=&gpsxto=&gpsyto=&keyword=&sortStdr=1&serviceKey=${API_KEY2}`)
-   //const res = await axios.get(`http://www.kopis.or.kr/openApi/restful/pblprfr?service=${API_KEY}&stdate=${from}&eddate=${to}&cpage=1&rows=10&prfstate=01`)
+   const res = await axios.get(`http://www.kopis.or.kr/openApi/restful/pblprfr?service=${process.env.API_KEY}&stdate=${from}&eddate=${to}&cpage=1&rows=10&prfstate=01`)
   .then(response => {
     return convert.xml2json(response.data, { compact: true, spaces: 4 })
   });
