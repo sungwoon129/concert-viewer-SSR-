@@ -1,5 +1,7 @@
 .ConcertItemBlock {
-    display: flex;
+    width: 32%;
+    color: #EFEFEF;
+    
 }
 
 .thumbnail {
@@ -7,8 +9,7 @@
   }
   .thum_img {
     display: block;
-    width: 160px;
-    height: 160px;
+    width: 100%;
     object-fit: cover;
   }
   .contents {

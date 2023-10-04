@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import styles from "../ConcertItem.module.css";
+import styles from "../style/ConcertItem.module.css";
 
 const ConcertItem = ({ item }) => {
   const {

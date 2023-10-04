@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <div>
+    <div className="footer">
       <p>
         · 집계기간 : 최종집계 2023.09.30
         <br></br>· 집계대상 : 모든 공연 데이터 전송기관

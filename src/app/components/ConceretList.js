@@ -1,5 +1,5 @@
 import ConcertItem from "./ConcertItem";
-import styles from "../ConcertList.module.css";
+import styles from "../style/ConcertList.module.css";
 
 const ConcertList = ({ list }) => {
   return (

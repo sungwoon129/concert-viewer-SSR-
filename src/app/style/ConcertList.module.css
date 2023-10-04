@@ -1,0 +1,13 @@
+.ConcertListBlock {
+     display: flex;
+    gap: 20px 2%;
+    flex-wrap: wrap;
+    
+}
+.ConcertListBlock {
+    position: relative;
+    margin: 100px auto;
+    padding: 40px 10px 10px 10px;
+    max-width: 850px;
+    background-color: rgb(0, 0, 0);
+}
