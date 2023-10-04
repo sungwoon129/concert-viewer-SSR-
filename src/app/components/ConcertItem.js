@@ -1,8 +1,8 @@
+import React, { forwardRef } from "react";
 import Link from "next/link";
-import React from "react";
 import styles from "../style/ConcertItem.module.css";
 
-const ConcertItem = ({ item }) => {
+const ConcertItem = forwardRef((props, ref) => {
   const {
     mt20id,
     prfnm,
@@ -13,7 +13,7 @@ const ConcertItem = ({ item }) => {
     genrenm,
     prfstate,
     openrun,
-  } = item;
+  } = props.item;
 
   const url = "pages/concert/" + mt20id._text;
 
@@ -47,6 +47,6 @@ const ConcertItem = ({ item }) => {
       </div>
     </div>
   );
-};
+});
 
 export default ConcertItem;
